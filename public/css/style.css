@@ -922,7 +922,7 @@ footer {
         overflow-x: hidden !important;
     }
 
-    /* NAVBAR */
+  
     .navbar {
         width: 100% !important;
         min-height: 82px !important;
@@ -930,6 +930,7 @@ footer {
         padding: 0.6rem 0.8rem !important;
         margin: 0 !important;
         box-sizing: border-box !important;
+        
     }
 
     .navbar .container-fluid {
