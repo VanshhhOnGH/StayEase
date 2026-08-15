@@ -1,0 +1,59 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="stay-hero">
+  <h1>Find your perfect stay</h1>
+  <p>
+    Discover beautiful hotels, villas, cottages and unique stays around the world.
+  </p>
+
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-3">
+
+  <% for(let listing of allListings){ %>
+
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+
+      <div class="card col listing-card">
+
+        <img
+          src="<%= getListingImageUrl(listing.image) %>"
+          class="card-img-top"
+          alt="listingimage"
+          style="height: 20rem;"
+        />
+
+        <div class="card-img-overlay"></div>
+
+        <div class="card-body">
+
+          <p class="listing-title mb-1">
+            <b>
+              <%= listing.title %>
+            </b>
+          </p>
+
+          <p class="listing-price mb-1">
+            ₹ <%= listing.price != null ? listing.price.toLocaleString("en-IN") : "N/A" %>/night
+          </p>
+
+          <p class="listing-location mb-0">
+            <i
+              class="fa-solid fa-location-dot"
+              style="font-size: 0.8rem;"
+              aria-hidden="true"
+            ></i>
+
+            <span>
+              <%= listing.location %>, <%= listing.country %>
+            </span>
+          </p>
+
+        </div>
+      </div>
+
+    </a>
+
+  <% } %>
+
+</div>

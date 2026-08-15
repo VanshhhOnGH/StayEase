@@ -1,0 +1,49 @@
+<nav
+  class="navbar navbar-expand-md navbar-light bg-body-light border-bottom sticky-top"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"
+      ><i class="fa-regular fa-compass"></i>StayEase</a
+    >
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="navbar-nav-search ms-auto">
+  <form class="d-flex" action="/listings" method="GET" role="search">
+    <input
+      class="form-control me-2 search-input"
+      type="search"
+      name="search"
+      placeholder="Search hotel or destination"
+    />
+
+    <button class="btn btn-search" type="submit">
+      <i class="fas fa-search"></i>
+    </button>
+  </form>
+</div>
+
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <% if (typeof currentUser !== "undefined" && currentUser) { %>
+          <a class="nav-link4" href="/listings/new">Add Your Property</a>
+          <a class="nav-link3" href="/logout">Logout</a>
+        <% } else { %>
+          <a class="nav-link1" href="/signup">Signup</a>
+          <a class="nav-link2" href="/login">Login</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
